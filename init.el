@@ -24,6 +24,9 @@
 ; ----------------------------------------------------------------------
 ; EVIL
 ; ----------------------------------------------------------------------
+
+; Use c-u for scrolling (must before the `require`)
+(setq evil-want-C-u-scroll t)
 (require 'evil)
 (evil-mode 1)
 
