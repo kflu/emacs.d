@@ -20,6 +20,7 @@
 ; ----------------------------------------------------------------------
 (global-set-key (kbd "M-x") 'helm-M-x)
 (setq helm-mode-fuzzy-match 't)
+(helm-mode 1)
 
 ; ----------------------------------------------------------------------
 ; EVIL
@@ -29,6 +30,9 @@
 (setq evil-want-C-u-scroll t)
 (require 'evil)
 (evil-mode 1)
+(setq evil-buffer-regexps 
+      '((".*" . emacs)))
+(setq evil-default-state 'emacs)
 
 ; ----------------------------------------------------------------------
 ; better-jumper
