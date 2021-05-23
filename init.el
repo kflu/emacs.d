@@ -52,3 +52,6 @@
 (setq inhibit-startup-screen 't)
 (xterm-mouse-mode)
 (global-display-line-numbers-mode)
+(menu-bar-mode -1)
+(setq custom-file (concat user-emacs-directory "/custom.el"))
+
