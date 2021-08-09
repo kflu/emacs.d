@@ -16,28 +16,27 @@
 (require 'use-package)
 
 
-(straight-use-package 'helm)
 (use-package helm
+             :straight t
              :config
              (global-set-key (kbd "M-x") 'helm-M-x)
              (setq helm-mode-fuzzy-match 't)
              (helm-mode 1))
 
 
-(straight-use-package 'evil)
-(use-package evil 
+(use-package evil
+             :straight t
              :init
              ; Use c-u for scrolling (must before the `require`)
              (setq evil-want-C-u-scroll t)
              :config
-             (message "fo")
              (require 'evil)
              (evil-mode 1)
              (setq evil-default-state 'emacs))
 
 
-(straight-use-package 'better-jumper)
 (use-package better-jumper
+             :straight t
              :config
              (require 'better-jumper)
              (better-jumper-mode +1)
@@ -47,8 +46,8 @@
                                    (define-key evil-motion-state-map (kbd "C-i") 'better-jumper-jump-forward)))
 
 
-(straight-use-package 'markdown-mode)
 (use-package markdown-mode
+             :straight t
              :ensure t
              :commands (markdown-mode gfm-mode)
              :mode (("README\\.md\\'" . gfm-mode)
@@ -57,8 +56,8 @@
              :init (setq markdown-command "multimarkdown"))
 
 
-(straight-use-package 'lsp-mode)
 (use-package lsp-mode
+             :straight t
              :init
              (setq lsp-keymap-prefix "C-c l")
              :config
@@ -66,16 +65,16 @@
              (define-key lsp-mode-map (kbd "C-c l") lsp-command-map))
 
 
-(straight-use-package 'company)
-(use-package company)
+(use-package company
+             :straight t)
 
 
-(straight-use-package 'lsp-ui)
-(use-package lsp-ui)
+(use-package lsp-ui
+             :straight t)
 
 
-(straight-use-package 'lsp-pyright)
 (use-package lsp-pyright
+             :straight t
              :commands lsp
              :ensure t
              :hook (python-mode . (lambda ()
@@ -90,6 +89,6 @@
 (xterm-mouse-mode)
 (global-display-line-numbers-mode 1)
 
-(setq custom-file "~/.config/emacs-custom.el")
+(setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
